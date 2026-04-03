@@ -1,0 +1,30 @@
+// Lấy dữ liệu từ input
+let canNang = Number(document.getElementById("canNang").value);
+let chieuCao = Number(document.getElementById("chieuCao").value);
+
+let result = document.getElementById("result");
+
+// Kiểm tra hợp lệ
+if (isNaN(canNang) || isNaN(chieuCao) || canNang <= 0 || chieuCao <= 0) {
+    result.innerHTML = "Vui lòng nhập số hợp lệ!";
+    return;
+}
+
+// Tính BMI
+let bmi = canNang / (chieuCao * chieuCao);
+
+let phanLoai = "";
+
+// Phân loại
+if (bmi < 18.5) {
+    phanLoai = "Gầy";
+} else if (bmi < 25) {
+    phanLoai = "Bình thường";
+} else if (bmi < 30) {
+    phanLoai = "Thừa cân";
+} else {
+    phanLoai = "Béo phì";
+}
+
+// Hiển thị kết quả
+result.innerHTML = "BMI: " + bmi.toFixed(2) + " - " + phanLoai;
