@@ -1,0 +1,14 @@
+<h1>Tính chỉ số BMI</h1>
+
+<label>Cân nặng (kg):</label><br>
+<input type="text" id="canNang"><br><br>
+
+<label>Chiều cao (m):</label><br>
+<input type="text" id="chieuCao"><br><br>
+
+<button id="btnTinh">Tính BMI</button>
+
+<p id="result"></p>
+
+<!-- Nhúng file JS -->
+<script src="app.js"></script>
