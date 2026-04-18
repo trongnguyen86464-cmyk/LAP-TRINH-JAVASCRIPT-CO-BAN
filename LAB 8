@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 08</title>
+    <style>
+        #count {
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .positive { color: green; }
+        .negative { color: red; }
+    </style>
+</head>
+<body>
+
+<h1>Bộ đếm</h1>
+<div id="count">0</div>
+
+<button id="increase">Tăng</button>
+<button id="decrease">Giảm</button>
+<button id="reset">Reset</button>
+<button id="plus5">+5</button>
+
+<script>
+let count = 0;
+
+const display = document.getElementById("count");
+
+function render() {
+    display.textContent = count;
+
+    display.classList.remove("positive", "negative");
+
+    if (count > 0) {
+        display.classList.add("positive");
+    } else if (count < 0) {
+        display.classList.add("negative");
+    }
+}
+
+document.getElementById("increase").addEventListener("click", function() {
+    count++;
+    render();
+});
+
+document.getElementById("decrease").addEventListener("click", function() {
+    count--;
+    render();
+});
+
+document.getElementById("reset").addEventListener("click", function() {
+    count = 0;
+    render();
+});
+
+document.getElementById("plus5").addEventListener("click", function() {
+    count += 5;
+    render();
+});
+</script>
+
+</body>
+</html>
