@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 07</title>
+    <style>
+        .active {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<h1 id="title">Tiêu đề ban đầu</h1>
+<p id="desc">Đây là mô tả ban đầu</p>
+<img id="img" src="https://via.placeholder.com/150" width="150">
+
+<br><br>
+<button onclick="changeContent()">Thay đổi</button>
+<button onclick="resetContent()">Khôi phục</button>
+
+<script>
+function changeContent() {
+    document.getElementById("title").innerText = "Tiêu đề đã thay đổi";
+    document.getElementById("desc").textContent = "Nội dung mới sau khi click";
+    document.getElementById("img").src = "https://via.placeholder.com/150/ff0000";
+    document.getElementById("title").classList.add("active");
+}
+
+function resetContent() {
+    document.getElementById("title").innerText = "Tiêu đề ban đầu";
+    document.getElementById("desc").textContent = "Đây là mô tả ban đầu";
+    document.getElementById("img").src = "https://via.placeholder.com/150";
+    document.getElementById("title").classList.remove("active");
+}
+</script>
+
+</body>
+</html>
